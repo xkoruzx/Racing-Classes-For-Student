@@ -1,0 +1,131 @@
+fileFormatVersion: 2
+guid: 8a6add01fdf10744896f8da6736cb20b
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Base
+    100002: BKLFT_WHEEL
+    100004: BKRGHT_WHEEL
+    100006: BWH_Rot
+    100008: CatKart_Mesh
+    100010: //RootNode
+    100012: FRLFT_WHEEL
+    100014: FRRGHT_WHEEL
+    100016: FWHL
+    100018: FWHL_Rot
+    100020: FWHR
+    100022: FWHR_Rot
+    100024: Root
+    100026: StWH
+    400000: Base
+    400002: BKLFT_WHEEL
+    400004: BKRGHT_WHEEL
+    400006: BWH_Rot
+    400008: CatKart_Mesh
+    400010: //RootNode
+    400012: FRLFT_WHEEL
+    400014: FRRGHT_WHEEL
+    400016: FWHL
+    400018: FWHL_Rot
+    400020: FWHR
+    400022: FWHR_Rot
+    400024: Root
+    400026: StWH
+    2100000: CatKart
+    4300000: CatKart_Mesh
+    4300002: FRLFT_WHEEL
+    4300004: FRRGHT_WHEEL
+    4300006: BKLFT_WHEEL
+    4300008: BKRGHT_WHEEL
+    9500000: //RootNode
+    13700000: BKLFT_WHEEL
+    13700002: BKRGHT_WHEEL
+    13700004: CatKart_Mesh
+    13700006: FRLFT_WHEEL
+    13700008: FRRGHT_WHEEL
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,191 @@
+fileFormatVersion: 2
+guid: e6ec7a42f7f5cdf42a1d8bc9dcc937af
+timeCreated: 1550423721
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Base
+    100002: Boy_Seated
+    100004: //RootNode
+    100006: BWH_Rot
+    100008: Cart
+    100010: Chest
+    100012: Elbow_L
+    100014: Elbow_R
+    100016: FWHL
+    100018: FWHL_Rot
+    100020: FWHR
+    100022: FWHR_Rot
+    100024: Hand_L
+    100026: Hand_R
+    100028: Head
+    100030: Hips
+    100032: IndL1
+    100034: IndL2
+    100036: IndL3
+    100038: IndR1
+    100040: IndR2
+    100042: IndR3
+    100044: Neck
+    100046: Root
+    100048: Root_1
+    100050: Scapula_L
+    100052: Scapula_R
+    100054: Shoulder_LS
+    100056: Shoulder_RS
+    100058: Spine
+    100060: StWH
+    100062: ThL1
+    100064: ThL2
+    100066: ThL3
+    100068: ThR1
+    100070: ThR2
+    100072: ThR3
+    400000: Base
+    400002: Boy_Seated
+    400004: //RootNode
+    400006: BWH_Rot
+    400008: Cart
+    400010: Chest
+    400012: Elbow_L
+    400014: Elbow_R
+    400016: FWHL
+    400018: FWHL_Rot
+    400020: FWHR
+    400022: FWHR_Rot
+    400024: Hand_L
+    400026: Hand_R
+    400028: Head
+    400030: Hips
+    400032: IndL1
+    400034: IndL2
+    400036: IndL3
+    400038: IndR1
+    400040: IndR2
+    400042: IndR3
+    400044: Neck
+    400046: Root
+    400048: Root_1
+    400050: Scapula_L
+    400052: Scapula_R
+    400054: Shoulder_LS
+    400056: Shoulder_RS
+    400058: Spine
+    400060: StWH
+    400062: ThL1
+    400064: ThL2
+    400066: ThL3
+    400068: ThR1
+    400070: ThR2
+    400072: ThR3
+    7400000: Girl_TurnLeft
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.2
+    animationPositionError: 0.2
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Girl_TurnLeft
+      takeName: Base Stack
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
