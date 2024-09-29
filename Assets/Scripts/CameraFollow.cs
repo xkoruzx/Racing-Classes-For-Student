@@ -6,7 +6,7 @@ public class CameraFollow : MonoBehaviour
 {
 
     CameraCalculations cameraCalc;
-    public Transform target;
+    public static Transform target;
     public int playerLayerNumber = 9;
     public float maxDistance = 4.0f; //maximum distance the camera can be from the target
     public float minDistance = 2.0f; //minimum distance the camera cana be from the target

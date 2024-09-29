@@ -6,8 +6,8 @@ public class AnimController : MonoBehaviour
     private bool noKeyPress;
     public GameObject kart;
     public GameObject character;
-    [SerializeField] Animator kartAnim;
-    [SerializeField] Animator characterAnim;
+    [SerializeField] public static Animator kartAnim;
+    [SerializeField] public static Animator characterAnim;
 
     void Start()
     {
