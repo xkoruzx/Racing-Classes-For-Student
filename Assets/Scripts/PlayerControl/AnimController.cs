@@ -4,15 +4,31 @@ using UnityEngine;
 public class AnimController : MonoBehaviour
 {
     private bool noKeyPress;
-    public GameObject kart;
-    public GameObject character;
+    public static GameObject kart;
+    public static GameObject character;
     [SerializeField] public static Animator kartAnim;
     [SerializeField] public static Animator characterAnim;
 
     void Start()
     {
-        kartAnim = kart.GetComponent<Animator>();
+        if (kart != null)
+        {
+            kartAnim = kart.GetComponent<Animator>();
+        }
+        else
+        {
+            Debug.LogError("Kart GameObject is not assigned in the Inspector.");
+        }
+
+        if (character != null)
+        {
+
         characterAnim = character.GetComponent<Animator>();
+        }
+        else
+        {
+            Debug.LogError("Character GameObject is not assigned in the Inspector.");
+        }
     }
 
     void Update()
