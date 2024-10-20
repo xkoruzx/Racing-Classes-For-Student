@@ -23,11 +23,21 @@ public class CharacterSwapper : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        AnimController.character = player.transform.Find("Char").gameObject; //set the character to the char object
-        AnimController.kart = player.transform.Find("Kart").gameObject; //set the kart to the kart object
+        AnimController.characterAnim = player.transform.Find("Char").gameObject.GetComponent<Animator>(); //set the character to the char object
+        AnimController.kartAnim = player.transform.Find("Kart").gameObject.GetComponent<Animator>(); //set the kart to the kart object
+        AnimController.ready = true;
 
         characterDropdown.onValueChanged.AddListener(delegate { CharacterChanged();}); //add the CharacterChanged function to the character dropdown
         kartDropdown.onValueChanged.AddListener(delegate { KartChanged();}); //add the KartChanged function to the kart dropdown
+
+        hairDropdown.onValueChanged.AddListener(delegate { HairChanged();}); //add the CharacterChanged function to the character dropdown
+        skinDropdown.onValueChanged.AddListener(delegate { SkinChanged();}); //add the KartChanged function to the kart dropdown
+
+        hairDropdownParent = hairDropdown.transform.parent.gameObject; //? add after finish changed character
+        skinDropdownParent = skinDropdown.transform.parent.gameObject; //? add after finish changed character
+
+        hairDropdownParent.SetActive(false); 
+        skinDropdownParent.SetActive(false);
         
         CharacterRotator.objectToRotate = player.transform; //set the object to rotate to the player object
     }
@@ -39,6 +49,18 @@ public class CharacterSwapper : MonoBehaviour
         newChar.SetActive(true); //set the new character to active
         newChar.name = "Char"; //set the name of the new character to "Char"
         newChar.transform.parent = player.transform; //set the parent of the new character to the player object
+
+        if(hairDropdownParent.activeInHierarchy == false)
+        {
+            hairDropdownParent.SetActive(true);
+        }
+        if(skinDropdownParent.activeInHierarchy == false)
+        {
+            skinDropdownParent.SetActive(true);
+        }
+
+        hairDropdown.value = 0;
+        skinDropdown.value = 0;
 
         AnimController.characterAnim = newChar.GetComponent<Animator>(); //get the animator component of the new character
 
@@ -102,5 +124,126 @@ public class CharacterSwapper : MonoBehaviour
                 break;
         }
         CharacterRotator.objectToRotate = player.transform; //set the object to rotate to the player object
+    }
+
+    void HairChanged()
+    {
+        GameObject currentAvatar = player.transform.Find("Char").Find("Avatar").gameObject; //? make a available for the current avatar
+
+        Material currentMaterial;
+        Material currentMaterial2;
+
+        bool isGirl = false;
+
+        if (charInUse == 2)
+        {
+            isGirl = true;
+        }
+
+        if (isGirl)
+        {
+            currentMaterial = currentAvatar.GetComponent<Renderer>().materials[2];
+            currentMaterial2 = currentAvatar.GetComponent<Renderer>().materials[2];
+        }
+        else
+        {
+            currentMaterial = currentAvatar.GetComponent<Renderer>().materials[0];
+            currentMaterial2 = currentAvatar.GetComponent<Renderer>().materials[1];
+
+        }
+        switch(hairDropdown.value)
+        {
+            case 0:
+                if (isGirl)
+                {
+                    currentMaterial.SetTexture("_MainTex", girlHair1);
+                }
+                else
+                {
+                    currentMaterial.SetTexture("_MainTex", boyHair1);
+                    currentMaterial2.SetTexture("_MainTex", boyHair1);
+                }
+                break;
+            case 1:
+                if (isGirl)
+                {
+                    currentMaterial.SetTexture("_MainTex", girlHair2);
+                }
+                else
+                {
+                    currentMaterial.SetTexture("_MainTex", boyHair2);
+                    currentMaterial2.SetTexture("_MainTex", boyHair2);
+                }
+                break;
+            case 2:
+                if (isGirl)
+                {
+                    currentMaterial.SetTexture("_MainTex", girlHair3);
+                }
+                else
+                {
+                    currentMaterial.SetTexture("_MainTex", boyHair3);
+                    currentMaterial2.SetTexture("_MainTex", boyHair3);
+                }
+                break;
+        }
+    }
+    void SkinChanged()
+    {
+        GameObject currentAvatar = player.transform.Find("Char").Find("Avatar").gameObject; //? make a available for the current avatar
+
+        Material currentMaterial;
+
+        bool isGirl = false;
+
+        if (charInUse == 2)
+        {
+            isGirl = true;
+        }
+
+        if (isGirl)
+        {
+            currentMaterial = currentAvatar.GetComponent<Renderer>().materials[0];
+
+        }
+        else
+        {
+            currentMaterial = currentAvatar.GetComponent<Renderer>().materials[2];
+
+        }
+        switch(skinDropdown.value)
+        {
+            case 0:
+                if (isGirl)
+                {
+                    currentMaterial.SetTexture("_MainTex", girlSkin1);
+                }
+                else
+                {
+                    currentMaterial.SetTexture("_MainTex", boySkin1);
+                }
+                break;
+            case 1:
+                if (isGirl)
+                {
+                    currentMaterial.SetTexture("_MainTex", girlSkin2);
+                }
+                else
+                {
+                    currentMaterial.SetTexture("_MainTex", boySkin2);
+
+                }
+                break;
+            case 2:
+                if (isGirl)
+                {
+                    currentMaterial.SetTexture("_MainTex", girlSkin3);
+                }
+                else
+                {
+                    currentMaterial.SetTexture("_MainTex", boySkin3);
+                }
+                break;
+        }
     }
 }
