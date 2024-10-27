@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameLogic : MonoBehaviour
 {
@@ -11,9 +12,10 @@ public class GameLogic : MonoBehaviour
     public Transform[] checkpointArray;
     public static Transform[] checkpointA;
 
+    public GameObject finishPanel;
+
     //current lap and checkpoint variables
-    public static int currentCheckpoint = 0;
-    public static int currentLap = 0;
+    public static int currentCheckpoint, currentLap;
 
     //Lap used for text display and max lap #
     public int Lap;
@@ -22,6 +24,7 @@ public class GameLogic : MonoBehaviour
 
     //starting position and the player
     public Vector3 startPos;
+    public Quaternion startRotation;
     public static Transform player;
 
     //total players and the current player position as an int
@@ -29,17 +32,13 @@ public class GameLogic : MonoBehaviour
     public int playerCount = 1;
 
     //All of the UI text variables
-    public Text lapText;
-    public Text lapTimerText;
-    public Text totalTimerText;
-    public Text startTimerText;
-    public Text positionTextUpper;
-    public Text positionTextLower;
+    public Text lapText, lapTimerText, totalTimerText, startTimerText, positionTextUpper, positionTextLower;
+
+    public Text winnerNameText, returnTimerText;
 
 
     //Lap timer arras for Minutes : Seconds . Milliseconds
-    public static float lapTimeCount;
-    public static float totalTimeCount;
+    public static float lapTimeCount, totalTimeCount;
 
     //Counting Numbers for the lap and total timers
     public float[] lapTime = { 0, 0, 0 };
@@ -48,6 +47,8 @@ public class GameLogic : MonoBehaviour
 
     //boolean that determines when to start counting
     private bool startTiming;
+
+    private bool finish = false;
     void Start()
     {
         //set the current lap and checkpoint to 0 at start
@@ -82,9 +83,47 @@ public class GameLogic : MonoBehaviour
         startTimerText.color = Color.yellow;
         yield return new WaitForSeconds(1.0f);
         startTimerText.text = "";
+    }
+
+    IEnumerator FinishGame()
+    {
+        finish = true;
+        totalTimeCount = 0.0f;
+
+        startTimerText.text = "Finished";
+        yield return new WaitForSeconds(2.0f);
+
+        startTimerText.text = "";
+        finishPanel.SetActive(true);
+
+        returnTimerText.text = "3";
+        yield return new WaitForSeconds(1.0f);
+
+        returnTimerText.text = "2";
+        yield return new WaitForSeconds(1.0f);
+
+        returnTimerText.text = "1";
+        yield return new WaitForSeconds(1.0f);
+        returnTimerText.text = "0";
+
+        Destroy(player.gameObject);
+        SceneManager.LoadScene("MainMenu");
+        
     }    
     // Update is called once per frame
     void Update()
+    {
+        if (!finish)
+        {
+            TimerCount();
+            LapLogic();
+            positionTextUpper.text = playerPosition.ToString();
+            checkpointA = checkpointArray;
+        }
+        
+    }
+
+    private void TimerCount()
     {
         //if start timing is true do all the time 
         if (startTiming)
@@ -108,7 +147,10 @@ public class GameLogic : MonoBehaviour
         //Display the Minutes : Seconds . Milliseconds for both timers
         lapTimerText.text = string.Format("{0:00}:{1:00}.{2:000}", lapTime[0], lapTime[1], lapTime[2]);
         totalTimerText.text = string.Format("{0:00}:{1:00}.{2:000}", totalTime[0], totalTime[1], totalTime[2]);
+    }
 
+    private void LapLogic()
+    {
         //if the current lap is not equal to the lap, we want to reset lapTimer
         if (currentLap != Lap)
         {
@@ -125,7 +167,7 @@ public class GameLogic : MonoBehaviour
         //if the lap is greater than maxLaps we want to stop the code
         if (Lap > MaxLaps)
         {
-            this.enabled = false;
+            StartCoroutine(FinishGame());
 
         }
 
@@ -138,9 +180,5 @@ public class GameLogic : MonoBehaviour
         {
             lapText.text = "Lap " + Lap + " of " + MaxLaps;
         }
-
-        //update the player position text and the checkpointA array
-        positionTextUpper.text = playerPosition.ToString();
-        checkpointA = checkpointArray;
     }
 }
