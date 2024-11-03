@@ -6,19 +6,25 @@ using UnityEngine.SceneManagement;
 
 public class ButtonHandler : MonoBehaviour
 {
-    public Button backButton, goButton, noButton, yesButton;
-    
+    public Button backButton, goButton, noButton, yesButton, startMPButton;
+        
+    public GameObject confirmPanel, player;
 
-    
-    public GameObject confirmPanel;
+    public Text connectText;
 
-    public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
         goButton.onClick.AddListener(delegate { PopupConfirm(); });
         noButton.onClick.AddListener(delegate { Cancel(); });
         yesButton.onClick.AddListener(delegate { Proceed(); });
+        backButton.onClick.AddListener(delegate { Back(); });
+
+    }
+
+    void Back()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 
     void PopupConfirm()
@@ -28,11 +34,8 @@ public class ButtonHandler : MonoBehaviour
 
     void Proceed()
     {
-        CameraFollow.target = player.transform;
-        GameLogic.player = player.transform;
-        player.GetComponent<Rigidbody>().useGravity = true;
-        DontDestroyOnLoad(player);
-        SceneManager.LoadScene("Racing");
+        confirmPanel.SetActive(false);
+        connectingPanel.SetActive(true);
     }
 
     void Cancel()
