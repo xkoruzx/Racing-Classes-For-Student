@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 6444600303640177673}
   - component: {fileID: 6444600303627009325}
   m_Layer: 0
-  m_Name: Cat
+  m_Name: Avatar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 6444600303640177675}
   - component: {fileID: 6444600303631074285}
   m_Layer: 0
-  m_Name: CatMesh
+  m_Name: Cat_Char
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

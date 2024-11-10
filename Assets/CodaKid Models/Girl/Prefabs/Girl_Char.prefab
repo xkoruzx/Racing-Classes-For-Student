@@ -720,7 +720,7 @@ GameObject:
   - component: {fileID: 7322357108792538953}
   - component: {fileID: 7322357108806362747}
   m_Layer: 0
-  m_Name: Girl
+  m_Name: Avatar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -889,7 +889,7 @@ GameObject:
   - component: {fileID: 7322357108792538959}
   - component: {fileID: 7322357108802083003}
   m_Layer: 0
-  m_Name: Girl_Mesh
+  m_Name: Girl_Char
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1,17 +1,23 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using UnityEngine;
 
-public class AnimController : MonoBehaviour
+public class AnimController : MonoBehaviourPun
 {
     private bool noKeyPress;
     [SerializeField] public static Animator kartAnim;
     [SerializeField] public static Animator characterAnim;
-    
     public static bool ready = false;
 
     void Update()
     {
-        if(ready == true)
+        // Only control the animation for the client, not other clients.
+        if (photonView.IsMine == false && PhotonNetwork.IsConnected == true)
+        {
+            return;
+        }
+
+        if (ready == true)
         {
             RunAnimations();
         }

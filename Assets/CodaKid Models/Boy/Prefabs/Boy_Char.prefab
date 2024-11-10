@@ -992,7 +992,7 @@ GameObject:
   - component: {fileID: 232887293590731029}
   - component: {fileID: 232887293604161537}
   m_Layer: 0
-  m_Name: Boy
+  m_Name: Avatar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1194,7 +1194,7 @@ GameObject:
   m_Component:
   - component: {fileID: 232887293590731039}
   m_Layer: 0
-  m_Name: Boy_Seated
+  m_Name: Avatar_Seated
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
